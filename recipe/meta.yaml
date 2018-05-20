@@ -1,4 +1,4 @@
-{% set version = '0.7.0' %}
+{% set version = "0.7.2" %}
 
 package:
   name: r-ritis
@@ -9,7 +9,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/ritis_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/ritis/ritis_{{ version }}.tar.gz
-  sha256: bb3a3243f83083e7dd874624e8dfb57953c8aea38df16b3e5c0163857e875d38
+  sha256: a9b44be7850c9fd8351468ee3be9252e8dc68c4e7f1569ce48f303ccde868169
 
 build:
   number: 0

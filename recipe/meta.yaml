@@ -1,26 +1,31 @@
-{% set version = '0.7.0' %}
+{% set version = '0.7.2' %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-ritis
-  version: {{ version }}
+  version: {{ version|replace("-", "_") }}
 
 source:
   fn: ritis_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/ritis_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/ritis/ritis_{{ version }}.tar.gz
-  sha256: bb3a3243f83083e7dd874624e8dfb57953c8aea38df16b3e5c0163857e875d38
+    - {{ cran_mirror }}/src/contrib/ritis_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/ritis/ritis_{{ version }}.tar.gz
+  sha256: 3a8c57fd498b6cbe7e4e2aa015b176d9d699b249f390735d0a5eb8f49eb3c7ae
 
 build:
+  merge_build_host: True  # [win]
   number: 0
-  script: R CMD INSTALL --build .
-  skip: True  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
+# Suggests: roxygen2 (>= 6.0.1), knitr, testthat, webmockr, vcr
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-crul >=0.4.0
     - r-data.table >=1.9.6
@@ -37,15 +42,18 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('ritis')"  # [not win]
+    - $R -e "library('ritis')"           # [not win]
     - "\"%R%\" -e \"library('ritis')\""  # [win]
 
 about:
-  home: https://cran.r-project.org/web/packages/ritis
+  home: https://github.com/ropensci/ritis
   license: MIT
-  license_file: LICENSE
-  summary: An interface to the Integrated Taxonomic Information System ('ITIS') (<https
+  summary: An interface to the Integrated Taxonomic Information System ('ITIS') (<https://www.itis.gov>).
+    Includes functions to work with the 'ITIS' REST 'API' methods (<https://www.itis.gov/ws_description.html>),
+    as well as the 'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
+  license_family: MIT
 
 extra:
   recipe-maintainers:
+    - dpryan79
     - ocefpaf

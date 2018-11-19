@@ -1,22 +1,21 @@
 About r-ritis
 =============
 
-Home: https://cran.r-project.org/web/packages/ritis
+Home: https://github.com/ropensci/ritis
 
 Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: An interface to the Integrated Taxonomic Information System ('ITIS') (<https
+Summary: An interface to the Integrated Taxonomic Information System ('ITIS') (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST 'API' methods (<https://www.itis.gov/ws_description.html>), as well as the 'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
 
 
 
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-ritis-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-ritis-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-ritis-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-ritis-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-ritis-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-ritis-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-ritis-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-ritis-feedstock)
 
 Current release info
 ====================

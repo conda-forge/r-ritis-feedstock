@@ -16,16 +16,13 @@ source:
 
 build:
   noarch: generic
-  merge_build_host: True  # [win]
+ 
   number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
 
-# Suggests: roxygen2 (>= 6.0.1), knitr, testthat, webmockr, vcr
 requirements:
-  build:
-    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-crul >=0.4.0
@@ -43,8 +40,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('ritis')"           # [not win]
-    - "\"%R%\" -e \"library('ritis')\""  # [win]
+    - $R -e "library('ritis')"
 
 about:
   home: https://github.com/ropensci/ritis

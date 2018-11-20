@@ -15,16 +15,14 @@ source:
   sha256: 3a8c57fd498b6cbe7e4e2aa015b176d9d699b249f390735d0a5eb8f49eb3c7ae
 
 build:
-  merge_build_host: True  # [win]
-  number: 0
+  noarch: generic
+ 
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
 
-# Suggests: roxygen2 (>= 6.0.1), knitr, testthat, webmockr, vcr
 requirements:
-  build:
-    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-crul >=0.4.0
@@ -42,8 +40,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('ritis')"           # [not win]
-    - "\"%R%\" -e \"library('ritis')\""  # [win]
+    - $R -e "library('ritis')"
 
 about:
   home: https://github.com/ropensci/ritis

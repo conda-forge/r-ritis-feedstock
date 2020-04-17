@@ -1,4 +1,4 @@
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ritis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ritis/ritis_{{ version }}.tar.gz
-  sha256: 23bc11599a64c25fe7a60e86fa3cd8c4078e140bc338c6d51d8d75b81564ecbd
+  sha256: 4abbe6c860fd3e465116573c9b2f119dbbd0046646844551523188ded63f0f6c
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -47,9 +47,8 @@ about:
   home: https://github.com/ropensci/ritis
   license: MIT
   license_file: LICENSE
-  summary: An interface to the Integrated Taxonomic Information System ('ITIS') (<https://www.itis.gov>).
-    Includes functions to work with the 'ITIS' REST API methods (<https://www.itis.gov/ws_description.html>),
-    as well as the 'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
+  summary: An interface to the Integrated Taxonomic Information System ('ITIS') (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST API methods
+    (<https://www.itis.gov/ws_description.html>), as well as the 'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
   license_family: MIT
 
 extra:

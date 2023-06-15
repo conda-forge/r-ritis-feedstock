@@ -1,11 +1,11 @@
-About r-ritis
-=============
+About r-ritis-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ritis-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ropensci/ritis
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ritis-feedstock/blob/main/LICENSE.txt)
 
 Summary: An interface to the Integrated Taxonomic Information System ('ITIS') (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST API methods (<https://www.itis.gov/ws_description.html>), as well as the 'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
 
